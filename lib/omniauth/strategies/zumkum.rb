@@ -8,7 +8,12 @@ module OmniAuth
 
       option :client_options, {
         :site => "http://passport.zumkum.com",
-        :authorize_url => "/oauth/authorize"
+        :authorize_url => "/oauth/authorize",
+        :token_url => "/oauth/token"
+      }
+      
+      option :token_params, {
+        :parse          => :json
       }
 
       uid { raw_info["id"] }
